@@ -1,7 +1,7 @@
 name: "🐞 Bug 报告"
 description: 提交一个 Bug 报告
 title: "[Bug]: "
-labels: ["bug"]
+labels: ["bug", "module"]
 assignees: [abgox]
 body:
   - type: checkboxes
@@ -15,6 +15,8 @@ body:
         - label: 你已经阅读了项目的 README 文件。
           required: true
         - label: 你已经在 [Issues](https://github.com/abgox/PSCompletions/issues) 中搜索了相关问题。
+          required: true
+        - label: 如果问题和补全菜单的行为相关，请先检查 `psc menu config` 下的相关配置。
           required: true
         - label: 你已经查看了 https://pscompletions.abgox.com/
   - type: textarea
