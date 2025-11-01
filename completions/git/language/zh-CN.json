@@ -24,9 +24,9 @@
           ]
         },
         {
-          "name": "--object-format=",
+          "name": "--object-format",
           "tip": [
-            "U: --object-format=<format>\n",
+            "U: --object-format <format>\n",
             "指定仓库的对象格式（哈希算法）。\n",
             "有效值为 sha1 和（如果启用）sha256。sha1 是默认值。"
           ],
@@ -62,17 +62,17 @@
           ]
         },
         {
-          "name": "--template=",
+          "name": "--template",
           "tip": [
-            "U: --template=<template-directory>\n",
+            "U: --template <template-directory>\n",
             "指定一个自定义模板目录用于仓库初始化。"
           ],
           "next": 0
         },
         {
-          "name": "--separate-git-dir=",
+          "name": "--separate-git-dir",
           "tip": [
-            "U: --separate-git-dir=<git-dir>\n",
+            "U: --separate-git-dir <git-dir>\n",
             "并不将存储库初始化至 $GIT_DIR 或 ./.git/ 目录，而是在其中创建一个包含实际仓库路径的文本文件。\n",
             "此文件作为连接到仓库的 Git 符号链接，其与文件系统无关。\n",
             "如果为重新初始化操作，则将仓库移动到指定的路径。"
@@ -82,10 +82,10 @@
         {
           "name": "-b",
           "alias": [
-            "--initial-branch="
+            "--initial-branch"
           ],
           "tip": [
-            "U: -b <branch-name> | --initial-branch=<branch-name>\n",
+            "U: -b, --initial-branch <branch-name>\n",
             "在新创建的仓库中使用指定的名称作为初始分支。\n",
             "如果未指定，则返回默认名称"
           ],
@@ -442,6 +442,12 @@
           ]
         },
         {
+          "name": "--no-edit",
+          "tip": [
+            "使用选定的提交消息，不启动编辑器。"
+          ]
+        },
+        {
           "name": "--amend",
           "tip": [
             "修改最后一次提交的信息(创建一个新的提交, 替换最后一个提交)"
@@ -451,6 +457,33 @@
           "name": "—allow-empty",
           "tip": [
             "用于没有提交信息的 commit"
+          ]
+        },
+        {
+          "name": "--date",
+          "tip": [
+            "U: --date <date>\n",
+            "为提交设置日期"
+          ],
+          "next": [
+            {
+              "name": "(Get-Date)",
+              "tip": [
+                "使用当前时间"
+              ]
+            },
+            {
+              "name": "'2025-01-01'",
+              "tip": [
+                "指定日期"
+              ]
+            },
+            {
+              "name": "'2025-01-01 12:00:00'",
+              "tip": [
+                "指定日期和时间"
+              ]
+            }
           ]
         },
         {
@@ -939,7 +972,7 @@
             "--create"
           ],
           "tip": [
-            "U: -c|--create <new_branch>\n",
+            "U: -c, --create <new_branch>\n",
             "创建一个新分支并切换到它。"
           ]
         },
@@ -947,6 +980,19 @@
           "name": "-",
           "tip": [
             "切换到之前切换的分支。"
+          ]
+        },
+        {
+          "name": "-f",
+          "alias": [
+            "--force",
+            "--discard-changes"
+          ],
+          "tip": [
+            "即使索引或工作树与 HEAD 不同，也继续执行。\n",
+            "索引和工作树都被恢复为与切换目标一致的状态。\n",
+            "如果指定了--recurse-submodules，子模块内容也会被恢复以匹配切换目标。\n",
+            "这用于丢弃本地更改。"
           ]
         }
       ]
@@ -1071,7 +1117,7 @@
             "remove"
           ],
           "tip": [
-            "U: rm|remove <repository>\n",
+            "U: rm, remove <repository>\n",
             "移除一个远程仓库。"
           ],
           "next": []
@@ -1143,7 +1189,7 @@
             "--list"
           ],
           "tip": [
-            "U: -l|--list [pattern]\n",
+            "U: -l, --list [pattern]\n",
             "列出标签(可以使用通配符)。\n",
             "E: -l v1.0*"
           ],
@@ -1163,7 +1209,7 @@
             "--annotate"
           ],
           "tip": [
-            "U: -a|--annotate <tag>\n",
+            "U: -a, --annotate <tag>\n",
             "创建一个注解标签对象。\n",
             "E: -a v1.0.0"
           ],
@@ -1175,7 +1221,7 @@
             "--delete"
           ],
           "tip": [
-            "U: -d|--delete <tag>\n",
+            "U: -d, --delete <tag>\n",
             "删除标签。"
           ],
           "next": []
@@ -1192,7 +1238,7 @@
             "--verify"
           ],
           "tip": [
-            "U: -v|--verify <tag>\n",
+            "U: -v, --verify <tag>\n",
             "验证标签。"
           ],
           "next": []
@@ -1767,6 +1813,14 @@
         "E: show                 --- 显示 HEAD\n",
         "   show <commit_hash>   --- 显示提交"
       ],
+      "options": [
+        {
+          "name": "-s"
+        },
+        {
+          "name": "--format=fuller"
+        }
+      ],
       "next": []
     },
     {
@@ -2264,7 +2318,7 @@
             "--output-directory"
           ],
           "tip": [
-            "U: -o|--output-directory <path>\n",
+            "U: -o, --output-directory <path>\n",
             "指定 bugreport 文件的存放位置。"
           ],
           "next": 0
@@ -2275,7 +2329,7 @@
             "--suffix"
           ],
           "tip": [
-            "U: -s|--suffix <suffix>\n",
+            "U: -s, --suffix <suffix>\n",
             "指定文件名的 strftime 格式后缀。"
           ],
           "next": 0
@@ -3102,6 +3156,14 @@
       "name": "update-index",
       "tip": [
         "将文件内容注册到索引中。"
+      ],
+      "options": [
+        {
+          "name": "--refresh",
+          "tip": [
+            "查看当前索引，并通过检查 stat() 信息来确定是否需要合并或更新。"
+          ]
+        }
       ]
     },
     {
@@ -3277,7 +3339,7 @@
     {
       "name": "--exec-path",
       "tip": [
-        "U: --exec-path[=<核心程序路径>]\n",
+        "U: --exec-path [<路径>]\n",
         "安装 Git 核心程序的路径。\n",
         "这也可以通过设置 GIT_EXEC_PATH 环境变量来控制。如果没有给出路径，git 会打印当前的设置，然后退出。"
       ],
@@ -3321,9 +3383,9 @@
       ]
     },
     {
-      "name": "--git-dir=",
+      "name": "--git-dir",
       "tip": [
-        "U: --git-dir=<仓库路径>\n",
+        "U: --git-dir <仓库路径>\n",
         "设置仓库的路径（\".git\" 目录）。\n",
         "这也可以通过设置 GIT_DIR 环境变量来控制。\n",
         "<仓库路径> 可以是绝对路径或是当前工作目录的相对路径。"
@@ -3331,18 +3393,18 @@
       "next": 0
     },
     {
-      "name": "--work-tree=",
+      "name": "--work-tree",
       "tip": [
-        "U: --work-tree=<工作区路径>\n",
+        "U: --work-tree <工作区路径>\n",
         "设置工作树的路径。<工作区路径> 可以是一个绝对路径或与当前工作目录相对的路径。\n",
         "这也可以通过设置 GIT_WORK_TREE 环境变量和 core.worktree 配置变量来控制"
       ],
       "next": 0
     },
     {
-      "name": "--namespace=",
+      "name": "--namespace",
       "tip": [
-        "U: --namespace=<路径>\n",
+        "U: --namespace <路径>\n",
         "设置 Git 命名空间。\n",
         "这相当于设置 GIT_NAMESPACE 环境变量。"
       ],
@@ -3414,18 +3476,18 @@
       ]
     },
     {
-      "name": "--list-cmds=",
+      "name": "--list-cmds",
       "tip": [
-        "U: --list-cmds=<命令组>[,<命令组>…​]\n",
+        "U: --list-cmds <命令组>[,<命令组>…​]\n",
         "按组列出命令。\n",
         "这是一个内部/实验性的选项，将来可能会改变或删除。"
       ],
       "next": 0
     },
     {
-      "name": "--attr-source=",
+      "name": "--attr-source",
       "tip": [
-        "U: --attr-source=<树对象>\n",
+        "U: --attr-source <树对象>\n",
         "从 <树对象> 而不是工作区中读取 gitattributes。\n",
         "这相当于设置 GIT_ATTR_SOURCE 环境变量。"
       ],

@@ -9,7 +9,7 @@
 @{
     RootModule           = 'PSCompletions.psm1'
 
-    ModuleVersion        = '5.6.9'
+    ModuleVersion        = '5.9.1'
 
     GUID                 = '00929632-527d-4dab-a5b3-21197faccd05'
 
@@ -21,13 +21,12 @@
 
     CompatiblePSEditions = @('Core', 'Desktop')
 
-    Description          = 'A completion manager for better and simpler use PowerShell completions.
+    Description          = 'A completion manager for better and simpler use completions in PowerShell.
  It provides a better tab-completion menu to enhance the command line experience.
  For more information, please visit the project or website:
   - Website: https://pscompletions.abgox.com
   - Github:  https://github.com/abgox/PSCompletions
-  - Gitee:   https://gitee.com/abgox/PSCompletions
- '
+  - Gitee:   https://gitee.com/abgox/PSCompletions'
 
     ScriptsToProcess     = 'core\init.ps1'
 

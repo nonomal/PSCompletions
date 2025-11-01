@@ -1,5 +1,35 @@
 [English](./CHANGELOG.md) | [简体中文](./CHANGELOG.zh-CN.md)
 
+## 5.9.1 (2025/11/01)
+
+- 修复了相同名称但大小写不同的参数重叠问题
+
+## 5.9.0 (2025/10/18)
+
+- 允许在过滤中使用通配符 `*` 和 `?`
+  - 命令: `psc menu config enable_prefix_match_in_filter 0`
+  - 代价: 无法匹配原始的 `*` 和 `?` 字符
+- 优化了不同补全类型的处理逻辑
+  - 这让 `completion_suffix` 配置项的生效范围更加精确
+
+## 5.8.0 (2025/10/15)
+
+- 添加配置项 `enable_hooks_tip` ([#96](https://github.com/abgox/PSCompletions/issues/96))
+  - 对于全局设置: `psc menu config enable_hooks_tip 1`
+  - 对于特定补全: `psc completion git enable_hooks_tip 1`
+- 添加配置项 `completions_confirm_limit` ([#83](https://github.com/abgox/PSCompletions/issues/83))
+  - 命令: `psc menu config completions_confirm_limit 1000`
+- 添加了对于 `-?`，`-h`，`--help` 参数的支持
+  - 命令: `psc` | `psc -?` | `psc -h` | `psc --help`
+  - 以上四种命令的输出结果相同
+- 移除了对内置命令的提示信息的特殊处理 ([#97](https://github.com/abgox/PSCompletions/issues/97))
+- 其他的优化和修复
+
+## 5.7.0 (2025/10/11)
+
+- 添加配置项 `completion_suffix` ([#91](https://github.com/abgox/PSCompletions/issues/91))
+- 命令: `psc menu config completion_suffix " "`
+
 ## 5.6.9 (2025/9/20)
 
 - 在模块中禁用严格模式 ([#88](https://github.com/abgox/PSCompletions/issues/88))

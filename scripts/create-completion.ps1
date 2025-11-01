@@ -1,16 +1,16 @@
-param([string]$completion_name)
+param(
+    [string]$Name
+)
+
+Set-StrictMode -Off
+
+$completion_name = $Name
 
 $textPath = "$PSScriptRoot/language/$PSCulture.json"
 if (!(Test-Path $textPath)) {
     $textPath = "$PSScriptRoot/language/en-US.json"
 }
 $text = Get-Content -Path $textPath -Encoding utf8 | ConvertFrom-Json
-
-# $isAdmin = [bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544")
-# if (!$isAdmin) {
-#     Write-Host $text."need-admin" -ForegroundColor Red
-#     return
-# }
 
 if (!$PSCompletions) {
     Write-Host $text."import-psc" -ForegroundColor Red
@@ -52,6 +52,7 @@ $PSCompletions.data.list += $completion_name
 $PSCompletions.data.alias.$completion_name = $completion_name
 $PSCompletions.data.aliasMap.$completion_name = $completion_name
 $PSCompletions.data.config.comp_config.$completion_name = @{
-    enable_hooks = 1
+    enable_hooks     = 1
+    enable_hooks_tip = 1
 }
 $PSCompletions.data | ConvertTo-Json -Depth 100 | Out-File $PSCompletions.path.data -Encoding utf8 -Force

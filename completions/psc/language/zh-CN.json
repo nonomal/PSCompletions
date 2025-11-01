@@ -22,8 +22,8 @@
           "name": "*",
           "tip": [
             "添加所有的补全。\n",
-            "注意：添加大量的补全可能会导致 PowerShell 启动加载速度变得慢一点。\n",
-            "      建议添加自己需要使用的补全。"
+            "注意：添加所有补全可能会导致 PowerShell 启动加载速度变慢。\n",
+            "      推荐按需添加，而不是添加所有补全。"
           ]
         }
       ],
@@ -184,8 +184,8 @@
               "name": "0",
               "tip": [
                 "设置为 0\n",
-                "禁用补全缓存, 主要用于更新调试补全数据文件。\n",
-                "禁用后, 每次补全触发都会重新去读取补全数据文件(json)。"
+                "禁用补全缓存, 主要用于更新调试补全文件。\n",
+                "禁用后, 每次补全触发都会重新去读取补全文件(json)。"
               ]
             }
           ]
@@ -323,7 +323,7 @@
       "name": "completion",
       "tip": [
         "指定单个补全的特殊配置(特殊配置优先级最高)。\n",
-        "每个补全默认带有两个可设置的特殊配置(language|enable_tip)。\n",
+        "每个补全默认带有多个特殊配置({{ $PSCompletions.default_completion_item -join '|' }})。\n",
         "{{ $info.completion.example }}"
       ],
       "next": []
@@ -995,8 +995,30 @@
               "name": "enable_tip",
               "tip": [
                 "当前值: {{ $PSCompletions.config.enable_tip }} (默认值为 1, 表示启用)\n",
-                "设置是否需要补全提示信息。\n",
-                "当启用时, 如果 PowerShell 显示区域过小, 会自动隐藏补全提示信息, 以便能正常显示补全项。"
+                "设置是否需要补全提示信息。"
+              ],
+              "next": [
+                {
+                  "name": "0",
+                  "tip": [
+                    "设置为 0\n",
+                    "不显示补全提示信息。"
+                  ]
+                },
+                {
+                  "name": "1",
+                  "tip": [
+                    "设置为 1 (默认值)\n",
+                    "显示补全提示信息。"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "enable_hooks_tip",
+              "tip": [
+                "当前值: {{ $PSCompletions.config.enable_hooks_tip }} (默认值为 1, 表示启用)\n",
+                "设置通过 hooks 动态添加的补全项是否需要补全提示信息。"
               ],
               "next": [
                 {
@@ -1080,15 +1102,17 @@
               "name": "enable_prefix_match_in_filter",
               "tip": [
                 "当前值: {{ $PSCompletions.config.enable_prefix_match_in_filter }} (默认值为 0, 表示使用模糊匹配)\n",
-                "设置菜单是否使用前缀匹配模式进行补全过滤。\n",
-                "如果你开启了前缀匹配(设置为1), 将会自动提取当前补全候选的共用前缀。"
+                "设置菜单是否使用前缀匹配进行补全过滤。\n",
+                "如果你开启了前缀匹配(设置为1), 将会自动提取当前所有补全项的公共前缀。\n",
+                "否则使用模糊匹配，它支持使用 * 和 ? 作为通配符。"
               ],
               "next": [
                 {
                   "name": "0",
                   "tip": [
                     "设置为 0 (默认值)\n",
-                    "使用模糊匹配, 你只需要输入部分字符即可匹配到相关的补全项。"
+                    "使用模糊匹配, 你只需要输入部分字符即可匹配到相关的补全项。\n",
+                    "它支持使用 * 和 ? 作为通配符。"
                   ]
                 },
                 {
@@ -1315,8 +1339,23 @@
               ]
             },
             {
+              "name": "completion_suffix",
+              "tip": [
+                "当前值: \"{{ $PSCompletions.config.completion_suffix }}\" (默认值为 \" \")\n",
+                "设置补全后缀，当应用补全后，会自动补充这个后缀。\n",
+                "默认为一个空格，用于简化不必要的空格按键。"
+              ],
+              "next": [
+                {
+                  "name": "\" \"",
+                  "tip": [
+                    "设置为 \" \" (默认值)。"
+                  ]
+                }
+              ]
+            },
+            {
               "name": "enable_completions_sort",
-
               "tip": [
                 "当前值: {{ $PSCompletions.config.enable_completions_sort }} (默认值为 1, 表示启用)\n",
                 "设置是否根据命令历史记录动态排序补全列表。"
@@ -1340,12 +1379,11 @@
             },
             {
               "name": "enable_menu_enhance",
-
               "tip": [
                 "当前值: {{ $PSCompletions.config.enable_menu_enhance }} (默认值为 1, 表示启用)\n",
                 "设置是否增强补全菜单的功能。\n",
                 "详细信息: https://github.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强\n",
-                "          https://gitee.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强\n"
+                "          https://gitee.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强"
               ],
               "next": [
                 {
@@ -1353,7 +1391,7 @@
                   "tip": [
                     "设置为 0。\n",
                     "详细信息: https://github.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强\n",
-                    "          https://gitee.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强\n"
+                    "          https://gitee.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强"
                   ]
                 },
                 {
@@ -1361,14 +1399,13 @@
                   "tip": [
                     "设置为 1 (默认值)。\n",
                     "详细信息: https://github.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强\n",
-                    "          https://gitee.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强\n"
+                    "          https://gitee.com/abgox/PSCompletions/blob/main/README.zh-CN.md#关于菜单增强"
                   ]
                 }
               ]
             },
             {
               "name": "enable_tip_when_enhance",
-
               "tip": [
                 "当前值: {{ $PSCompletions.config.enable_tip_when_enhance }} (默认值为 1, 表示启用)\n",
                 "对于不是通过 'psc add' 添加的补全，如果有命令提示信息，是否显示。"
@@ -1389,6 +1426,22 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "completions_confirm_limit",
+              "tip": [
+                "当前值: {{ $PSCompletions.config.completions_confirm_limit }} (默认值为 -1, 表示无限制)\n",
+                "设置当补全项超过多少个时弹出二次确认框，确认后再获取补全。"
+              ],
+              "next": [
+                {
+                  "name": "-1",
+                  "tip": [
+                    "设置为 -1 (默认值)。\n",
+                    "它表示无限制，不管补全项有多少个，都会直接获取。"
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -1396,7 +1449,6 @@
     },
     {
       "name": "reset",
-
       "tip": [
         "将指定的配置重置为默认值。\n",
         "{{ $info.reset.example }}"
@@ -1506,6 +1558,19 @@
       ]
     }
   ],
+  "options": [
+    {
+      "name": "--help",
+      "alias": [
+        "-?",
+        "-h"
+      ],
+      "tip": [
+        "U: psc [-h|--help|-?]\n",
+        "显示 PSCompletions(psc) 的帮助信息"
+      ]
+    }
+  ],
   "info": {
     "completion_info": {
       "url": "https://github.com/abgox/PSCompletions",
@@ -1517,25 +1582,38 @@
     },
     "desc": [
       "<@Cyan>当前模块版本: <@Magenta>{{ $PSCompletions.version }}<@Cyan>\n",
+      "\n",
       "模块版本日志:\n",
       "  Github: <@Blue>https://github.com/abgox/PSCompletions/blob/main/module/CHANGELOG.zh-CN.md<@Cyan>\n",
       "  Gitee : <@Blue>https://gitee.com/abgox/PSCompletions/blob/main/module/CHANGELOG.zh-CN.md<@Cyan>\n",
       "\n",
       "<@Blue>PSCompletions<@Cyan> 命令简单, 只需要输入 <@Magenta>psc<@Cyan> 并按下 <@Magenta>空格<@Cyan> 和 <@Magenta>Tab<@Cyan> 键, 通过补全提示信息，你会快速了解所有命令用法。\n",
       "\n",
+      "<@Blue>PSCompletions<@Cyan> 拥有一个强大的补全菜单，以下是相关的按键绑定:\n",
+      "  - 选用当前选中的补全项: <@Magenta>Enter<@Cyan> (回车) | <@Magenta>Space<@Cyan> (空格)\n",
+      "      - 当只有一个补全项时，也可以使用 <@Magenta>Tab<@Cyan>\n",
+      "  - 删除过滤字符: <@Magenta>Backspace<@Cyan> (退格)\n",
+      "  - 退出补全菜单: <@Magenta>Esc<@Cyan> | <@Magenta>Ctrl + c<@Cyan>\n",
+      "      - 当过滤区域没有字符时，也可以使用 <@Magenta>Backspace<@Cyan> (退格) 退出补全菜单\n",
+      "  - 选择上一个补全项:  <@Magenta>Up<@Cyan>  | <@Magenta>Left<@Cyan>  | <@Magenta>Shift + Tab<@Cyan> | <@Magenta>Ctrl + u<@Cyan> | <@Magenta>Ctrl + p<@Cyan>\n",
+      "  - 选择下一个补全项: <@Magenta>Down<@Cyan> | <@Magenta>Right<@Cyan> |     <@Magenta>Tab<@Cyan>     | <@Magenta>Ctrl + d<@Cyan> | <@Magenta>Ctrl + n<@Cyan>\n",
+      "\n",
       "<@Blue>PSCompletions<@Cyan> 模块只会占用两个全局命名\n",
-      "  <@Magenta>PSCompletions<@Cyan> => 函数名, 模块导出的核心函数(<@Magenta>psc<@Cyan> 其实就是它的别名)\n",
-      " <@Magenta>$PSCompletions<@Cyan> => 变量名, 存储模块相关的所有数据(<@Yellow>你不能修改它<@Cyan>)\n",
+      "  <@Magenta>PSCompletions<@Cyan>: 函数名, 模块导出的核心函数 (<@Magenta>psc<@Cyan> 其实就是它的别名)\n",
+      " <@Magenta>$PSCompletions<@Cyan>: 变量名, 存储模块相关的所有数据 (<@Yellow>你不能修改它<@Cyan>)\n",
       "\n",
       "更多相关信息, 请访问:\n",
       "  Website : <@Blue>https://pscompletions.abgox.com<@Cyan>\n",
       "  Github  : <@Blue>https://github.com/abgox/PSCompletions<@Cyan>\n",
       "  Gitee   : <@Blue>https://gitee.com/abgox/PSCompletions<@Cyan>\n",
+      "\n",
       "如果有使用问题, 请提交 issue: https://github.com/abgox/PSCompletions/issues\n",
-      "如果 <@Blue>PSCompletions<@Cyan> 对你有所帮助, 请给这个项目一个 <@Yellow>Star<@>\n"
+      "\n",
+      "如果 <@Blue>PSCompletions<@Cyan> 对你有所帮助, 请给这个项目一个 <@Yellow>Star<@>"
     ],
     "description": [
       "<@Blue>PSCompletions(<@Magenta>psc<@Cyan>) --- PowerShell 补全管理模块\n",
+      "\n",
       "{{ $PSCompletions.info.desc }}"
     ],
     "init_info": [
@@ -1580,7 +1658,19 @@
         "scoop update pscompletions\n\n"
       ],
       "updating": "<@Cyan>尝试运行命令: <@Magenta>{{ $update_cmd }}<@Cyan>\nPSCompletions 模块正在尝试更新...",
-      "restart": "<@Yellow>请重启 PowerShell 并重新导入 PSCompletions 模块来使更改生效"
+      "restart": "<@Yellow>请重启 PowerShell 并重新导入 PSCompletions 模块来使更改生效",
+      "too_many_completions": {
+        "text": [
+          "补全项过多: {{ $count }}",
+          "需要更多加载时间",
+          "请确认获取或取消"
+        ],
+        "tip": [
+          "选用任意一项表示确认获取，否则表示取消\n",
+          "你可以使用 psc menu config completions_confirm_limit -1 来取消限制\n",
+          "也可以设置更高的值来限制补全数量"
+        ]
+      }
     },
     "current_value": "当前值",
     "set_value": "设置为 {{ $value }}。",
@@ -1599,13 +1689,10 @@
       "但是不建议你这样做, 它是一个很恰当的提示"
     ],
     "update_has": [
-      "<@Cyan>--------------------\n",
-      "可以更新的补全: <@Blue>{{ $PSCompletions.update -join ' ' }}<@Cyan>\n",
-      "你可以运行以下命令去更新它们:\n",
-      "<@Magenta>psc update *"
+      "<@Cyan>可以更新的补全: <@Blue>{{ $PSCompletions.update -join ' ' }}<@Cyan>\n",
+      "更新它们: <@Magenta>psc update *"
     ],
     "update_no": [
-      "<@Cyan>--------------------\n",
       "<@Green>已添加的补全都是最新的！"
     ],
     "param_min": "<@Red>传入的参数过少。",
@@ -1705,7 +1792,10 @@
         "if($json.config -or $config.hooks -ne $null){",
         " \"<@Blue>---------- $($completion) 补全特殊配置 ---------- \";",
         "$configList = @();",
-        "if($config.hooks -ne $null){$configList += @{name='enable_hooks';value=[int]$config.hooks;tip=$PSCompletions.info.completion.enable_hooks.tip};};",
+        "if($config.hooks -ne $null){",
+        "$configList += @{name='enable_hooks';value=[int]$config.hooks;tip=$PSCompletions.info.completion.enable_hooks.tip};",
+        "$configList += @{name='enable_hooks_tip';value=[int]$config.hooks;tip=$PSCompletions.info.completion.enable_hooks_tip.tip};",
+        "};",
         "if($json.config){$configList += $json.config;};",
         " $config_list = $configList | ForEach-Object {",
         "   \"`n<@Magenta>$($_.name)<@Blue>:`n默认值: $($_.value)`n$($PSCompletions.replace_content($_.tip))\"",
@@ -1826,7 +1916,7 @@
       ],
       "done": [
         "<@Green>PSCompletions 的配置修改成功!\n",
-        "<@Blue>{{ $config_item }}<@Green>: <@Magenta>{{ $old_value }}<@Green> => <@Magenta>{{ $new_value }}"
+        "<@Blue>{{ $config_item }}<@Green>: <@Magenta>{{ $PSCompletions.quote_if_only_whitespace($old_value) }}<@Green> => <@Magenta>{{ $PSCompletions.quote_if_only_whitespace($new_value) }}"
       ],
       "err": {
         "one_or_zero": [
@@ -1889,15 +1979,15 @@
       ],
       "done": [
         "<@Magenta>{{ $completion }}<@Green> 的特殊配置修改成功!\n",
-        "<@Blue>{{ $config_item }}<@Green>: <@Magenta>{{ $old_value }}<@Green> => <@Magenta>{{ $new_value }}"
+        "<@Blue>{{ $config_item }}<@Green>: <@Magenta>{{ $PSCompletions.quote_if_only_whitespace($old_value) }}<@Green> => <@Magenta>{{ $PSCompletions.quote_if_only_whitespace($new_value) }}"
       ],
       "err": {
         "min": [
           "<@Yellow>",
           "你应该继续输入要设置的配置项\n",
-          "每个补全默认带有两个可设置的特殊配置(<@Magenta>language<@Yellow>|<@Magenta>enable_tip<@Yellow>)\n",
+          "每个补全默认带有多个特殊配置(<@Magenta>{{ $PSCompletions.default_completion_item -join '<@Yellow>|<@Magenta>' }}<@Yellow>)\n",
           "{{",
-          "$config = $PSCompletions.config.comp_config.$($arg[1]).Keys | Where-Object { $_ -notin @('language','enable_tip') };",
+          "$config = $PSCompletions.config.comp_config.$($arg[1]).Keys | Where-Object { $_ -notin $PSCompletions.default_completion_item };",
           "if($config){ \"$($arg[1]) 额外的可用配置项: <@Magenta>$($config -join ' ')\" }",
           "}}"
         ]
@@ -1921,6 +2011,15 @@
           "设置 {{ $completion }} 是否显示补全提示信息"
         ]
       },
+      "enable_hooks_tip": {
+        "tip": [
+          "{{",
+          "$v = $PSCompletions.config.comp_config.$completion.enable_hooks_tip;",
+          "if($v -notin @('',$null)){ \"当前值: $($v)`n\" }",
+          "}}",
+          "设置 {{ $completion }} 通过 hooks 动态添加的补全项是否显示补全提示信息"
+        ]
+      },
       "enable_hooks": {
         "tip": [
           "{{",
@@ -1942,7 +2041,7 @@
       ],
       "done": [
         "<@Green>配置修改成功!\n",
-        "<@Blue>{{ $config_item }}<@Green>: <@Magenta>{{ $old_value }}<@Green> => <@Magenta>{{ $new_value }}"
+        "<@Blue>{{ $config_item }}<@Green>: <@Magenta>{{ $PSCompletions.quote_if_only_whitespace($old_value) }}<@Green> => <@Magenta>{{ $PSCompletions.quote_if_only_whitespace($new_value) }}"
       ],
       "symbol": {
         "example": [
@@ -2022,7 +2121,7 @@
         "  \"<@Green>重置完成!`n<@Cyan>以下是重置前后的新旧对比:`n------------------------------`n\";",
         "  ($change_list | ForEach-Object {",
         "$str = if($_.cmd){ \"<@Magenta>$($_.cmd)<@Blue>($($_.item))\" }else{ \"<@Blue>$($_.item)\" }",
-        " \"$($str): <@Magenta>$($_.old_value)<@Blue> => <@Magenta>$($_.new_value)<@Blue>\" }) -join \"`n\";",
+        " \"$($str): <@Magenta>$PSCompletions.quote_if_only_whitespace($_.old_value)<@Blue> => <@Magenta>$PSCompletions.quote_if_only_whitespace($_.new_value)<@Blue>\" }) -join \"`n\";",
         "  \"<@Cyan>`n------------------------------\"",
         "}",
         "}}"

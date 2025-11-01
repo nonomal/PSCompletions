@@ -25,9 +25,9 @@
           ]
         },
         {
-          "name": "--object-format=",
+          "name": "--object-format",
           "tip": [
-            "U: --object-format=<format>\n",
+            "U: --object-format <format>\n",
             "Specify the given object <format> (hash algorithm) for the repository.\n",
             "The valid values are sha1 and (if enabled) sha256. sha1 is the default."
           ],
@@ -63,17 +63,17 @@
           ]
         },
         {
-          "name": "--template=",
+          "name": "--template",
           "tip": [
-            "U: --template=<template-directory>\n",
+            "U: --template <template-directory>\n",
             "Specify a custom template directory for repository initialization."
           ],
           "next": 0
         },
         {
-          "name": "--separate-git-dir=",
+          "name": "--separate-git-dir",
           "tip": [
-            "U: --separate-git-dir=<git-dir>\n",
+            "U: --separate-git-dir <git-dir>\n",
             "Instead of initializing the repository as a directory to either $GIT_DIR or ./.git/, create a text file there containing the path to the actual repository.\n",
             "This file acts as a filesystem-agnostic Git symbolic link to the repository.\n",
             "If this is a reinitialization, the repository will be moved to the specified path."
@@ -83,10 +83,10 @@
         {
           "name": "-b",
           "alias": [
-            "--initial-branch="
+            "--initial-branch"
           ],
           "tip": [
-            "U: -b <branch-name> | --initial-branch=<branch-name>\n",
+            "U: -b, --initial-branch <branch-name>\n",
             "Use <branch-name> for the initial branch in the newly created repository.\n",
             "If not specified, fall back to the default name."
           ],
@@ -443,6 +443,12 @@
           ]
         },
         {
+          "name": "--no-edit",
+          "tip": [
+            "Use the selected commit message without launching an editor."
+          ]
+        },
+        {
           "name": "--amend",
           "tip": [
             "Modify the message of the last commit(Create a new commit, replacing the last one)"
@@ -453,6 +459,33 @@
           "tip": [
             "Usually recording a commit that has the exact same tree as its sole parent commit is a mistake, and the command prevents you from making such a commit.\n",
             "This option bypasses the safety, and is primarily for use by foreign SCM interface scripts."
+          ]
+        },
+        {
+          "name": "--date",
+          "tip": [
+            "U: --date <date>\n",
+            "Set the author date for the commit."
+          ],
+          "next": [
+            {
+              "name": "(Get-Date)",
+              "tip": [
+                "Use the current date and time."
+              ]
+            },
+            {
+              "name": "'2025-01-01'",
+              "tip": [
+                "Specify a date."
+              ]
+            },
+            {
+              "name": "'2025-01-01 12:00:00'",
+              "tip": [
+                "Specify a date and time."
+              ]
+            }
           ]
         },
         {
@@ -941,7 +974,7 @@
             "--create"
           ],
           "tip": [
-            "U: -c|--create <new_branch>\n",
+            "U: -c, --create <new_branch>\n",
             "Create a new branch and switch to it."
           ]
         },
@@ -949,6 +982,19 @@
           "name": "-",
           "tip": [
             "Switch to the previously switched branch."
+          ]
+        },
+        {
+          "name": "-f",
+          "alias": [
+            "--force",
+            "--discard-changes"
+          ],
+          "tip": [
+            "Proceed even if the index or the working tree differs from HEAD.\n",
+            "Both the index and working tree are restored to match the switching target.\n",
+            "If --recurse-submodules is specified, submodule content is also restored to match the switching target.\n",
+            "This is used to throw away local changes."
           ]
         }
       ]
@@ -1073,7 +1119,7 @@
             "remove"
           ],
           "tip": [
-            "U: rm|remove <repository>\n",
+            "U: rm, remove <repository>\n",
             "Remove a remote repository."
           ],
           "next": []
@@ -1145,7 +1191,7 @@
             "--list"
           ],
           "tip": [
-            "U: -l|--list [pattern]\n",
+            "U: -l, --list [pattern]\n",
             "List tags (can use wildcards)\n",
             "E: -l v1.0*"
           ],
@@ -1165,7 +1211,7 @@
             "--annotate"
           ],
           "tip": [
-            "U: -a|--annotate <tag>\n",
+            "U: -a, --annotate <tag>\n",
             "Create an annotated tag object.\n",
             "E: -a v1.0.0"
           ],
@@ -1177,7 +1223,7 @@
             "--delete"
           ],
           "tip": [
-            "U: -d|--delete <tag>\n",
+            "U: -d, --delete <tag>\n",
             "Delete tags."
           ],
           "next": []
@@ -1194,7 +1240,7 @@
             "--verify"
           ],
           "tip": [
-            "U: -v|--verify <tag>\n",
+            "U: -v, --verify <tag>\n",
             "Verify tags"
           ],
           "next": []
@@ -1770,6 +1816,14 @@
         "E: show                 --- Show HEAD\n",
         "   show <commit_hash>   --- Show the commit"
       ],
+      "options": [
+        {
+          "name": "-s"
+        },
+        {
+          "name": "--format=fuller"
+        }
+      ],
       "next": []
     },
     {
@@ -2267,7 +2321,7 @@
             "--output-directory"
           ],
           "tip": [
-            "U: -o|--output-directory <path>\n",
+            "U: -o, --output-directory <path>\n",
             "Specify the target location for the bugreport files."
           ],
           "next": 0
@@ -2278,7 +2332,7 @@
             "--suffix"
           ],
           "tip": [
-            "U: -s|--suffix <suffix>\n",
+            "U: -s, --suffix <suffix>\n",
             "Specify a strftime format suffix for the filenames."
           ],
           "next": 0
@@ -3105,6 +3159,14 @@
       "name": "update-index",
       "tip": [
         "Register file contents in the index."
+      ],
+      "options": [
+        {
+          "name": "--refresh",
+          "tip": [
+            "Looks at the current index and checks to see if merges or updates are needed by checking stat() information."
+          ]
+        }
       ]
     },
     {
@@ -3280,7 +3342,7 @@
     {
       "name": "--exec-path",
       "tip": [
-        "U: --exec-path[=<path>]\n",
+        "U: --exec-path [<path>]\n",
         "Path to wherever your core Git programs are installed.\n",
         "This can also be controlled by setting the GIT_EXEC_PATH environment variable.\n",
         "If no path is given, git will print the current setting and then exit."
@@ -3325,9 +3387,9 @@
       ]
     },
     {
-      "name": "--git-dir=",
+      "name": "--git-dir",
       "tip": [
-        "U: --git-dir=<path>\n",
+        "U: --git-dir <path>\n",
         "Set the path to the repository (\".git\" directory).\n",
         "This can also be controlled by setting the GIT_DIR environment variable.\n",
         "It can be an absolute path or relative path to current working directory."
@@ -3335,18 +3397,18 @@
       "next": 0
     },
     {
-      "name": "--work-tree=",
+      "name": "--work-tree",
       "tip": [
-        "U: --work-tree=<path>\n",
+        "U: --work-tree <path>\n",
         "Set the path to the working tree. It can be an absolute path or a path relative to the current working directory.\n",
         "This can also be controlled by setting the GIT_WORK_TREE environment variable and the core.worktree configuration variable"
       ],
       "next": 0
     },
     {
-      "name": "--namespace=",
+      "name": "--namespace",
       "tip": [
-        "U: --namespace=<path>\n",
+        "U: --namespace <path>\n",
         "Set the Git namespace.\n",
         "Equivalent to setting the GIT_NAMESPACE environment variable."
       ],
@@ -3418,18 +3480,18 @@
       ]
     },
     {
-      "name": "--list-cmds=",
+      "name": "--list-cmds",
       "tip": [
-        "U: --list-cmds=<group>[,<group>…​]\n",
+        "U: --list-cmds <group>[,<group>…​]\n",
         "List commands by group.\n",
         "This is an internal/experimental option and may change or be removed in the future."
       ],
       "next": 0
     },
     {
-      "name": "--attr-source=",
+      "name": "--attr-source",
       "tip": [
-        "U: --attr-source=<tree-ish>\n",
+        "U: --attr-source <tree-ish>\n",
         "Read gitattributes from <tree-ish> instead of the worktree.\n",
         "This is equivalent to setting the GIT_ATTR_SOURCE environment variable."
       ],

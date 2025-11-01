@@ -25,10 +25,16 @@
               "name": "abyss",
               "next": [
                 {
-                  "name": "https://github.com/abgox/abyss"
+                  "name": "https://github.com/abgox/abyss",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/abgox/abyss"
+                  "name": "https://gitee.com/abgox/abyss",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -36,10 +42,16 @@
               "name": "main",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Main"
+                  "name": "https://github.com/ScoopInstaller/Main",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Main"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Main",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -47,10 +59,16 @@
               "name": "extras",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Extras"
+                  "name": "https://github.com/ScoopInstaller/Extras",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Extras"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Extras",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -58,10 +76,16 @@
               "name": "versions",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Versions"
+                  "name": "https://github.com/ScoopInstaller/Versions",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Versions"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Versions",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -69,10 +93,16 @@
               "name": "nerd-fonts",
               "next": [
                 {
-                  "name": "https://github.com/matthewjberger/scoop-nerd-fonts"
+                  "name": "https://github.com/matthewjberger/scoop-nerd-fonts",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-nerd-fonts"
+                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-nerd-fonts",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -80,10 +110,16 @@
               "name": "java",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Java"
+                  "name": "https://github.com/ScoopInstaller/Java",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Java"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Java",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -91,10 +127,16 @@
               "name": "php",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/PHP"
+                  "name": "https://github.com/ScoopInstaller/PHP",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/PHP"
+                  "name": "https://gitee.com/scoop-installer-mirrors/PHP",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -102,10 +144,16 @@
               "name": "nirsoft",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Nirsoft"
+                  "name": "https://github.com/ScoopInstaller/Nirsoft",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Nirsoft"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Nirsoft",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -113,10 +161,16 @@
               "name": "sysinternals",
               "next": [
                 {
-                  "name": "https://github.com/niheaven/scoop-sysinternals"
+                  "name": "https://github.com/niheaven/scoop-sysinternals",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-sysinternals"
+                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-sysinternals",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -124,10 +178,16 @@
               "name": "nonportable",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Nonportable"
+                  "name": "https://github.com/ScoopInstaller/Nonportable",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Nonportable"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Nonportable",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             },
@@ -135,10 +195,16 @@
               "name": "games",
               "next": [
                 {
-                  "name": "https://github.com/Calinou/scoop-games"
+                  "name": "https://github.com/Calinou/scoop-games",
+                  "tip": [
+                    "官方版本"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-games"
+                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-games",
+                  "tip": [
+                    "镜像版本"
+                  ]
                 }
               ]
             }
@@ -228,7 +294,7 @@
             "--arch"
           ],
           "tip": [
-            "U: -a|--arch <32bit|64bit|arm64>\n",
+            "U: -a, --arch <32bit|64bit|arm64>\n",
             "如果支持, 使用指定的架构"
           ],
           "next": [
@@ -413,7 +479,7 @@
     {
       "name": "cache",
       "tip": [
-        "U: cache show|rm [<app>] [<app>...]\n",
+        "U: cache show, rm [<app>] [<app>...]\n",
         "管理下载缓存\n",
         "E: cache                --- 显示所有下载缓存\n",
         "   cache show 7zip      --- 显示 7zip 的下载缓存\n",
@@ -524,7 +590,8 @@
         "U: cat <app>\n",
         "显示指定应用程序的清单内容\n",
         "E: cat 7zip"
-      ]
+      ],
+      "next": []
     },
     {
       "name": "checkup",
@@ -693,7 +760,16 @@
           "hide": true,
           "next": [
             {
-              "name": "https://github.com/ScoopInstaller/Scoop"
+              "name": "https://github.com/ScoopInstaller/Scoop",
+              "tip": [
+                "Scoop 官方"
+              ]
+            },
+            {
+              "name": "https://gitee.com/scoop-installer-mirrors/Scoop",
+              "tip": [
+                "Scoop 镜像"
+              ]
             }
           ]
         },
@@ -974,24 +1050,28 @@
               "name": "1",
               "tip": [
                 "默认值\n",
+                "卸载/更新时先尝试终止相关进程\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "12",
               "tip": [
+                "卸载/更新时先尝试终止相关进程，然后删除通过 Link 创建的文件或目录\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "13",
               "tip": [
+                "卸载/更新时先尝试终止相关进程，然后删除临时数据\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "123",
               "tip": [
+                "卸载/更新时先尝试终止相关进程，然后删除通过 Link 创建的文件或目录以及临时数据\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             }
@@ -1005,18 +1085,21 @@
               "name": "1",
               "tip": [
                 "默认值\n",
+                "创建清单中定义的快捷方式\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "0",
               "tip": [
+                "不创建清单中定义的快捷方式\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "2",
               "tip": [
+                "如果应用使用安装程序创建了快捷方式，就不创建清单中定义的快捷方式，否则就创建\n",
                 "详情参考: https://gitee.com/abgox/abyss#config"
               ]
             }
@@ -1027,7 +1110,10 @@
           "hide": true,
           "next": [
             {
-              "name": "https://github.com"
+              "name": "\"^https://github.com|||^https://raw.githubusercontent.com\"",
+              "tip": [
+                "替换以 https://github.com 和 https://raw.githubusercontent.com 开头的 URL"
+              ]
             }
           ]
         },
@@ -1036,7 +1122,10 @@
           "hide": true,
           "next": [
             {
-              "name": "https://gh-proxy.com/github.com"
+              "name": "\"https://gh-proxy.com/github.com|||https://gh-proxy.com/raw.githubusercontent.com\"",
+              "tip": [
+                "替换为 https://gh-proxy.com/github.com 和 https://gh-proxy.com/raw.githubusercontent.com"
+              ]
             }
           ]
         },
@@ -1201,7 +1290,7 @@
             "--arch"
           ],
           "tip": [
-            "U: -a|--arch <32bit|64bit|arm64>\n",
+            "U: -a, --arch <32bit|64bit|arm64>\n",
             "如果支持, 使用指定的架构"
           ],
           "next": [
@@ -1363,5 +1452,15 @@
         ]
       }
     }
-  }
+  },
+  "config": [
+    {
+      "name": "exclude_buckets",
+      "value": "",
+      "tip": [
+        "动态生成补全时，要排除的 bucket\n",
+        "多个 bucket 使用 | 分割，例如 'aaa|bbb'"
+      ]
+    }
+  ]
 }

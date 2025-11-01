@@ -1,21 +1,28 @@
 name: 💡Feature Request
 description: Request a new feature or enhancement
 title: "[Request]: "
-labels:
-  [
-    "feature",
-  ]
-assignees:
-  [
-    abgox,
-  ]
+labels: ["module"]
+assignees: [abgox]
 body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before Start
+      options:
+        - label: You are using the latest version of PSCompletions.
+          required: true
+        - label: You have read this repository's README file.
+          required: true
+        - label: You have search for related issues in [Issues](https://github.com/abgox/PSCompletions/issues).
+          required: true
+        - label: If the feature request is related to menu, please ensure that you have checked `psc menu config`.
+          required: true
+        - label: You have visit https://pscompletions.abgox.com/
   - type: textarea
     id: description
     attributes:
       label: Describe the request
-      description:
-        |
+      description: |
         - Please describe your feature request or enhancement in detail.
         - What deficiency does it address in PSCompletions?
         - What use cases support your request?
@@ -25,10 +32,9 @@ body:
     id: powershell-version
     attributes:
       label: What Powershell version are you using?
-      description:
-        |
+      description: |
         - [PowerShell (pwsh)](https://learn.microsoft.com/powershell/scripting/overview)
-        - [Windows PowerShell (Windows builtin version)](https://learn.microsoft.com/powershell/scripting/what-is-windows-powershell)
+        - [Windows PowerShell 5.1 (Windows builtin version)](https://learn.microsoft.com/powershell/scripting/what-is-windows-powershell)
       options:
         - PowerShell
         - Windows PowerShell

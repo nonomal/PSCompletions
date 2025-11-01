@@ -25,10 +25,16 @@
               "name": "abyss",
               "next": [
                 {
-                  "name": "https://github.com/abgox/abyss"
+                  "name": "https://github.com/abgox/abyss",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/abgox/abyss"
+                  "name": "https://gitee.com/abgox/abyss",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -36,10 +42,16 @@
               "name": "main",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Main"
+                  "name": "https://github.com/ScoopInstaller/Main",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Main"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Main",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -47,10 +59,16 @@
               "name": "extras",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Extras"
+                  "name": "https://github.com/ScoopInstaller/Extras",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Extras"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Extras",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -58,10 +76,16 @@
               "name": "versions",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Versions"
+                  "name": "https://github.com/ScoopInstaller/Versions",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Versions"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Versions",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -69,10 +93,16 @@
               "name": "nerd-fonts",
               "next": [
                 {
-                  "name": "https://github.com/matthewjberger/scoop-nerd-fonts"
+                  "name": "https://github.com/matthewjberger/scoop-nerd-fonts",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-nerd-fonts"
+                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-nerd-fonts",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -80,10 +110,16 @@
               "name": "java",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Java"
+                  "name": "https://github.com/ScoopInstaller/Java",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Java"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Java",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -91,10 +127,16 @@
               "name": "php",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/PHP"
+                  "name": "https://github.com/ScoopInstaller/PHP",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/PHP"
+                  "name": "https://gitee.com/scoop-installer-mirrors/PHP",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -102,10 +144,16 @@
               "name": "nirsoft",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Nirsoft"
+                  "name": "https://github.com/ScoopInstaller/Nirsoft",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Nirsoft"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Nirsoft",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -113,10 +161,16 @@
               "name": "sysinternals",
               "next": [
                 {
-                  "name": "https://github.com/niheaven/scoop-sysinternals"
+                  "name": "https://github.com/niheaven/scoop-sysinternals",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-sysinternals"
+                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-sysinternals",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -124,10 +178,16 @@
               "name": "nonportable",
               "next": [
                 {
-                  "name": "https://github.com/ScoopInstaller/Nonportable"
+                  "name": "https://github.com/ScoopInstaller/Nonportable",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/Nonportable"
+                  "name": "https://gitee.com/scoop-installer-mirrors/Nonportable",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             },
@@ -135,10 +195,16 @@
               "name": "games",
               "next": [
                 {
-                  "name": "https://github.com/Calinou/scoop-games"
+                  "name": "https://github.com/Calinou/scoop-games",
+                  "tip": [
+                    "The official version"
+                  ]
                 },
                 {
-                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-games"
+                  "name": "https://gitee.com/scoop-installer-mirrors/scoop-games",
+                  "tip": [
+                    "The mirror version"
+                  ]
                 }
               ]
             }
@@ -229,7 +295,7 @@
             "--arch"
           ],
           "tip": [
-            "U: -a|--arch <32bit|64bit|arm64>\n",
+            "U: -a, --arch <32bit|64bit|arm64>\n",
             "Use specified architecture if supported"
           ],
           "next": [
@@ -414,7 +480,7 @@
     {
       "name": "cache",
       "tip": [
-        "U: cache show|rm [<app>] [<app>...]\n",
+        "U: cache show, rm [<app>] [<app>...]\n",
         "Manage download cache\n",
         "E: cache                --- Show all download caches\n",
         "   cache show 7zip      --- Show 7zip download cache\n",
@@ -526,7 +592,8 @@
         "U: cat <app>\n",
         "Display the content of a specified application's manifest\n",
         "E: cat 7zip"
-      ]
+      ],
+      "next": []
     },
     {
       "name": "checkup",
@@ -695,7 +762,16 @@
           "hide": true,
           "next": [
             {
-              "name": "https://github.com/ScoopInstaller/Scoop"
+              "name": "https://github.com/ScoopInstaller/Scoop",
+              "tip": [
+                "The official version of Scoop"
+              ]
+            },
+            {
+              "name": "https://gitee.com/scoop-installer-mirrors/Scoop",
+              "tip": [
+                "The mirror version of Scoop"
+              ]
             }
           ]
         },
@@ -976,24 +1052,28 @@
               "name": "1",
               "tip": [
                 "Default value\n",
+                "Attempt to terminate processes before uninstallation/update.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "12",
               "tip": [
+                "Attempt to terminate processes before uninstallation/update, and delete the files/directories created via Link.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "13",
               "tip": [
+                "Attempt to terminate processes before uninstallation/update, and delete the temporary data.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "123",
               "tip": [
+                "Attempt to terminate processes before uninstallation/update, delete the files/directories created via Link, and delete the temporary data.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             }
@@ -1007,18 +1087,21 @@
               "name": "1",
               "tip": [
                 "Default value\n",
+                "Create shortcuts defined in the manifest.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "0",
               "tip": [
+                "Don't create shortcuts defined in the manifest.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             },
             {
               "name": "2",
               "tip": [
+                "If the app creates shortcuts via installer, don't create shortcuts defined in the manifest; otherwise, create them.\n",
                 "Refer to: https://gitee.com/abgox/abyss#config"
               ]
             }
@@ -1029,7 +1112,10 @@
           "hide": true,
           "next": [
             {
-              "name": "https://github.com"
+              "name": "\"^https://github.com|||^https://raw.githubusercontent.com\"",
+              "tip": [
+                "Replace URLs starting with https://github.com and https://raw.githubusercontent.com"
+              ]
             }
           ]
         },
@@ -1038,7 +1124,10 @@
           "hide": true,
           "next": [
             {
-              "name": "https://gh-proxy.com/github.com"
+              "name": "\"https://gh-proxy.com/github.com|||https://gh-proxy.com/raw.githubusercontent.com\"",
+              "tip": [
+                "Replace with https://gh-proxy.com/github.com and https://gh-proxy.com/raw.githubusercontent.com"
+              ]
             }
           ]
         },
@@ -1203,7 +1292,7 @@
             "--arch"
           ],
           "tip": [
-            "U: -a|--arch <32bit|64bit|arm64>\n",
+            "U: -a, --arch <32bit|64bit|arm64>\n",
             "Use specified architecture if supported"
           ],
           "next": [
@@ -1365,5 +1454,15 @@
         ]
       }
     }
-  }
+  },
+  "config": [
+    {
+      "name": "exclude_buckets",
+      "value": "",
+      "tip": [
+        "Buckets to be excluded when dynamically generating completions.\n",
+        "Multiple buckets are separated by |, for example 'aaa|bbb'"
+      ]
+    }
+  ]
 }
